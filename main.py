@@ -2,19 +2,19 @@ import argparse
 import analyzer
 import generate
 
-parser = argparse.ArgumentParser(description='Analizador de contraseñas.')
-subparsers = parser.add_subparsers(dest='comando', help='Tipo de analizador a utilizar.')
-analyze_parser = subparsers.add_parser('analyze', help='Analizar una contraseña.')
-analyze_parser.add_argument('password', type=str, help='La contraseña a analizar.')
-analyze_parser.add_argument("--check", action="store_true", help="Activa la consulta a HIBP")
-generate_parser = subparsers.add_parser('generate', help='Generar una contraseña segura.')
-generate_parser.add_argument('--length', type=int, default=12, help='Longitud de la contraseña generada (por defecto: 12).')
+parser = argparse.ArgumentParser(description='Password Analyzer.')
+subparsers = parser.add_subparsers(dest='command', help='Type of analyzer to use.')
+analyze_parser = subparsers.add_parser('analyze', help='Analyze a password.')
+analyze_parser.add_argument('password', type=str, help='The password to analyze.')
+analyze_parser.add_argument("--check", action="store_true", help="Enable HIBP lookup")
+generate_parser = subparsers.add_parser('generate', help='Generate a secure password.')
+generate_parser.add_argument('--length', type=int, default=12, help='Length of the generated password (default: 12).')
 args = parser.parse_args()
-if args.comando is None:
+if args.command is None:
     parser.print_help()
-elif args.comando == 'analyze':
-    resultado = analyzer.analizar(args.password, check=args.check)
-    analyzer.imprimir_resultados(resultado)
-elif args.comando == 'generate':
-    print("Generando una contraseña segura...")
-    generate.generar_contrasena(args.length)
+elif args.command == 'analyze':
+    result = analyzer.analyze(args.password, check=args.check)
+    analyzer.print_results(result)
+elif args.command == 'generate':
+    print("Generating a secure password...")
+    password = generate.generate_password(args.length)

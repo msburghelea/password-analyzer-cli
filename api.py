@@ -12,6 +12,7 @@ origins = [
     "http://localhost:8000",
     "http://localhost:5173",
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -19,15 +20,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-class PasswordRequest (BaseModel):
+class PasswordRequest(BaseModel):
     password: str
     check: bool = False
 
 @app.post("/analyze")
 def analyze_password(data: PasswordRequest):
+    return analyzer.analyze(data.password, check=data.check)
 
-    return analyzer.analizar(data.password, check=data.check)
-    
 @app.get("/generate")
 def generate_password(length: int = 12):
-    return {"password": generate.generar_contrasena(length)}
+    return {"password": generate.generate_password(length)}
