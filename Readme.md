@@ -2,8 +2,7 @@
 
 A CLI tool to analyze password strength and check breaches via the Have I Been Pwned API.
 
-<!-- GIF -->
-
+![Demo](docs/Animation.gif)
 
 ## Features
 
@@ -64,8 +63,7 @@ python main.py generate --length 20
 
 ## Example output
 
-<!-- SCREENSHOT -->
-
+![Help](docs/help.png)
 
 ```json
 {
@@ -99,8 +97,12 @@ Your password stays private at all times.
 - [x] CLI password analyzer
 - [x] Secure password generator
 - [x] HIBP breach checker with k-anonymity
-- [ ] REST API with FastAPI
+- [x] REST API with FastAPI
 - [ ] Web frontend with React
+
+## Related
+
+- Frontend — React *(coming soon)*
 
 ## License
 
