@@ -36,7 +36,7 @@ password-analyzer-cli/
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/password-analyzer-cli
+git clone https://github.com/msburghelea/password-analyzer-cli
 cd password-analyzer-cli
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
