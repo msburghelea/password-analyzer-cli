@@ -67,16 +67,16 @@ python main.py generate --length 20
 
 ```json
 {
-    "longitud": "Fuerte",
-    "complejidad": {
-        "tiene_mayusculas": true,
-        "tiene_minusculas": true,
-        "tiene_digitos": true,
-        "tiene_especiales": true
+    "length": "Strong",
+    "complexity": {
+        "has_uppercase": true,
+        "has_lowercase": true,
+        "has_digits": true,
+        "has_special_chars": true
     },
-    "entropia_shannon": 3.58,
-    "entropia_bits": 65.4,
-    "es_comun": false,
+    "shannon_entropy": 3.58,
+    "bits_entropy": 65.4,
+    "is_common": false,
     "hibp": 0
 }
 ```
@@ -98,11 +98,11 @@ Your password stays private at all times.
 - [x] Secure password generator
 - [x] HIBP breach checker with k-anonymity
 - [x] REST API with FastAPI
-- [ ] Web frontend with React
+- [x] Web frontend with React
 
 ## Related
 
-- Frontend — React *(coming soon)*
+- [Frontend — React](https://password-analyzer-frontend.vercel.app/)
 
 ## License
 
