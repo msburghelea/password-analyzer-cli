@@ -11,6 +11,7 @@ origins = [
     "http://localhost:3000",
     "http://localhost:8000",
     "http://localhost:5173",
+    "https://password-analyzer-frontend.vercel.app",
 ]
 
 app.add_middleware(
